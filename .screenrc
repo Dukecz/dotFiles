@@ -1,0 +1,11 @@
+startup_message off
+hardstatus alwayslastline 
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%d-%m-%Y %{W}%c %{g}]'
+
+bindkey -d ^? stuff ^H
+bindkey -d ^@ stuff ^H
+
+term xterm
+
+# Default screens
+screen -t main 0
