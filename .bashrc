@@ -10,3 +10,4 @@ alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 umask 0002
 
+export EDITOR=vim
