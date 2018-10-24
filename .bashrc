@@ -19,9 +19,14 @@ alias httprestart='sudo systemctl restart httpd'
 alias gst='git status'
 alias gpush='git push origin'
 alias gpull='git fetch origin && git pull origin'
-alias grpull='git fetch origin && git pull --rebase origin'
+alias gitrpull='git fetch origin && git pull --rebase origin'
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset" --abbrev-commit'
 alias phpmemory='php -d memory_limit=3G'
 
 alias weather='curl http://wttr\.in/prague'
 alias maps='telnet mapscii.me'
+
+grpull()
+{
+    git stash && gitrpull "$1" && git stash pop;
+}
