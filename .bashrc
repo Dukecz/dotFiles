@@ -26,6 +26,9 @@ alias phpmemory='php -d memory_limit=3G'
 alias weather='curl http://wttr\.in/prague'
 alias maps='telnet mapscii.me'
 
+alias ovpnUp='sudo openvpn --config /etc/openvpn/server.conf --daemon'
+alias ovpnDown="sudo pkill -SIGTERM -f 'openvpn --config /etc/openvpn/server.conf --daemon'"
+
 grpull()
 {
     git stash && gitrpull "$1" && git stash pop;
