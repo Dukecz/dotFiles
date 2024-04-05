@@ -1,11 +1,15 @@
 startup_message off
+defdynamictitle off
+
 hardstatus alwayslastline 
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%d-%m-%Y %{W}%c %{g}]'
 
 bindkey -d ^? stuff ^H
 bindkey -d ^@ stuff ^H
 
-term xterm
+term xterm-256color
+#term screen-color256
 
-# Default screens
+defscrollback 10000
+
 screen -t main 0
