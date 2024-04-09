@@ -38,9 +38,6 @@ alias certinfo='openssl x509 -enddate -subject -noout -in'
 
 alias maps='telnet mapscii.me'
 
-alias ovpnUp='sudo openvpn --config /etc/openvpn/server.conf --daemon'
-alias ovpnDown="sudo pkill -SIGTERM -f 'openvpn --config /etc/openvpn/server.conf --daemon'"
-
 grpullstash()
 {
     git stash && gitrpull "$1" && git stash pop;
