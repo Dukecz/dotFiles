@@ -61,5 +61,5 @@ grpullstash()
 
 docker_run_named_image()
 {
-    docker run --name $1 --rm --entrypoint="" -it $2 bash
+    docker run --name $1 --rm --entrypoint="" -it $2 ${3:-bash}
 }
