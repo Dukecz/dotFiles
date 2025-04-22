@@ -63,3 +63,8 @@ docker_run_named_image()
 {
     docker run --name $1 --rm --entrypoint="" -it $2 ${3:-bash}
 }
+
+docker_run_named_image_as_root()
+{
+    sudo docker run --name $1 --user root --rm --entrypoint="" -it $2 ${3:-bash}
+}
