@@ -54,6 +54,10 @@ alias certinfo='openssl x509 -enddate -subject -noout -in'
 
 alias maps='telnet mapscii.me'
 
+if [ -f /usr/bin/lsd ]; then
+	alias ls=/usr/bin/lsd
+fi
+
 grpullstash()
 {
     git stash && grpull "$1" && git stash pop;
