@@ -63,12 +63,20 @@ grpullstash()
     git stash && grpull "$1" && git stash pop;
 }
 
+# name image command(default bash)
 docker_run_named_image()
 {
-    docker run --name $1 --rm --entrypoint="" -it $2 ${3:-bash}
+    docker run --name $1 --rm --entrypoint="" -it "$2" ${3:-bash}
 }
 
+# name image command(default bash)
 docker_run_named_image_as_root()
 {
-    sudo docker run --name $1 --user root --rm --entrypoint="" -it $2 ${3:-bash}
+    docker run --name $1 --user root --rm --entrypoint="" -it "$2" ${3:-bash}
+}
+
+# instance-id host target-port local-port profile(default netera)
+aws_ssm_forward_port()
+{
+    aws ssm start-session --target "$1" --profile "$4" --document-name AWS-StartPortForwardingSessionToRemoteHost --parameters host="$2",portNumber="$3",localPortNumber="$4"
 }
