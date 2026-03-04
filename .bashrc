@@ -78,5 +78,5 @@ docker_run_named_image_as_root()
 # instance-id host target-port local-port profile(default netera)
 aws_ssm_forward_port()
 {
-    aws ssm start-session --target "$1" --profile "$4" --document-name AWS-StartPortForwardingSessionToRemoteHost --parameters host="$2",portNumber="$3",localPortNumber="$4"
+    aws ssm start-session --target "$1" --profile "$5" --document-name AWS-StartPortForwardingSessionToRemoteHost --parameters host="$2",portNumber="$3",localPortNumber="$4"
 }
